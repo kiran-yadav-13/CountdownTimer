@@ -15,8 +15,17 @@ function App() {
      
        setHour(prev=>Math.floor(givenMin/60));
        console.log(hour)
+       if(hour && minute==0){
+        setHour(prev=>prev-1);
+        setMinute(59);
+        setSecond(60)
+       
+      }else if(hour && minute){
+        
+    
        setMinute((givenMin%60)-1)
        setSecond(60)
+      }
       }
       else{
         setHour(0)
